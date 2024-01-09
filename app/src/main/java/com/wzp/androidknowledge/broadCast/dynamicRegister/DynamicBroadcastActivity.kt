@@ -32,6 +32,8 @@ class DynamicBroadcastActivity : AppCompatActivity() {
         receiver = DynamicReceiver()
         intentFilter = IntentFilter()
         intentFilter.addAction("com.wzp.dynamicBroadcast")
+        intentFilter.addAction(Intent.ACTION_POWER_DISCONNECTED)
+        intentFilter.addAction(Intent.ACTION_POWER_CONNECTED)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             registerReceiver(receiver, intentFilter, RECEIVER_EXPORTED)
         } else {
