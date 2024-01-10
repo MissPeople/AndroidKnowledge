@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import com.wzp.androidknowledge.MainActivity
 import com.wzp.androidknowledge.R
+import com.wzp.androidknowledge.service.bind.BindService
 import com.wzp.androidknowledge.tools.Constants
 
 /**
@@ -42,6 +43,7 @@ class StaticReceiver : BroadcastReceiver() {
                 nManager.createNotificationChannel(channel)
             }
             nManager.notify(Constants.mNormalNotificationId,mBuilder.build())
+            context.startService(Intent(context,BindService::class.java))
         }
     }
 }

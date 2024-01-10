@@ -9,6 +9,7 @@ import com.wzp.androidknowledge.broadCast.dynamicRegister.DynamicBroadcastActivi
 import com.wzp.androidknowledge.broadCast.staticRegister.StaticBroadcastActivity
 import com.wzp.androidknowledge.databinding.ActivityMainBinding
 import com.wzp.androidknowledge.notification.NotificationActivity
+import com.wzp.androidknowledge.service.ServiceActivity
 import java.util.HashMap
 
 class MainActivity : AppCompatActivity() {
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         val map = HashMap<String, Class<*>>()
         map["通知"] = NotificationActivity::class.java
         map["广播"] = BroadcastActivity::class.java
+        map["service"] = ServiceActivity::class.java
         return map
     }
 }

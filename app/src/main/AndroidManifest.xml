@@ -4,9 +4,12 @@
 
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
 
     <application
         android:allowBackup="true"
+        android:persistent="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -29,6 +32,9 @@
         <activity android:name="com.wzp.androidknowledge.broadCast.dynamicRegister.DynamicBroadcastActivity" />
         <activity android:name="com.wzp.androidknowledge.broadCast.otherBroadcast.OtherBroadcast" />
         <activity android:name="com.wzp.androidknowledge.broadCast.BroadcastActivity" />
+        <activity android:name="com.wzp.androidknowledge.service.ServiceActivity" />
+        <activity android:name="com.wzp.androidknowledge.service.start.StartServiceActivity" />
+        <activity android:name="com.wzp.androidknowledge.service.bind.BindServiceActivity" />
         <!--静态注册广播-->
         <receiver
             android:name=".broadCast.staticRegister.StaticReceiver"
@@ -42,6 +48,9 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
+        <!--service注册-->
+        <service android:name=".service.start.StartService" />
+        <service android:name=".service.bind.BindService" android:foregroundServiceType="phoneCall"/>
     </application>
 
 </manifest>
